@@ -1,0 +1,101 @@
+/* ==========================================================================
+   Tokeni: boje, tipografija, razmaci, senke, pokret
+   Kontrast (WCAG AA, proveren):
+   ink na cream ............ 14.9 : 1
+   ink-soft na cream ....... 6.7 : 1
+   ink-soft na cream-deep .. 6.0 : 1
+   wood-deep na cream-deep  4.5 : 1
+   cream na wood-deep ...... 5.1 : 1  (dugmad)
+   wood-deep na cream ...... 5.1 : 1  (linkovi, akcenti)
+   moss na cream ........... 4.6 : 1  (sitni natpisi)
+   cream na pine ........... 10.1 : 1
+   on-dark-soft na pine .... 7.1 : 1
+   wood-light na pine ...... 5.3 : 1
+   wood (#A86B3C) i water (#6E8F8A) su samo za ukrase, ne za sitan tekst.
+   ========================================================================== */
+
+:root {
+  /* Boje */
+  --c-pine: #2F3E2C;
+  --c-pine-deep: #243022;
+  --c-moss: #5C7356;
+  --c-water: #6E8F8A;
+  --c-water-soft: #DCE5E1;
+  --c-wood: #A86B3C;
+  --c-wood-deep: #8F5A31;
+  --c-wood-darker: #774A27;
+  --c-wood-light: #D9A774;
+  --c-cream: #F6F1E7;
+  --c-cream-deep: #EDE4D3;
+  --c-paper: #FBF8F2;
+  --c-white: #FFFDF9;
+  --c-ink: #1E1E1A;
+  --c-ink-soft: #55554B;
+  --c-error: #9B2F22;
+
+  --c-line: rgba(30, 30, 26, 0.13);
+  --c-line-strong: rgba(30, 30, 26, 0.24);
+  --c-line-light: rgba(246, 241, 231, 0.2);
+  --c-on-dark: #F6F1E7;
+  --c-on-dark-soft: rgba(246, 241, 231, 0.8);
+
+  --focus: var(--c-wood-deep);
+
+  /* Tipografija */
+  --ff-serif: "Alegreya", "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+  --ff-sans: "Alegreya Sans", "Gill Sans", "Segoe UI", system-ui, sans-serif;
+
+  --fs-hero: clamp(2.5rem, 1.25rem + 5.2vw, 5.4rem);
+  --fs-h2: clamp(2.05rem, 1.4rem + 2.6vw, 3.4rem);
+  --fs-h3: clamp(1.45rem, 1.2rem + 0.9vw, 1.9rem);
+  --fs-lead: clamp(1.1875rem, 1.08rem + 0.45vw, 1.4rem);
+  --fs-body: clamp(1.0625rem, 1.02rem + 0.2vw, 1.1875rem);
+  --fs-small: 1.0625rem;
+  --fs-xs: 0.9375rem;
+
+  --lh-tight: 1.04;
+  --lh-heading: 1.12;
+  --lh-body: 1.65;
+
+  --tracking-hero: -0.012em;
+  --tracking-h2: -0.008em;
+  --tracking-caps: 0.12em;
+
+  /* Raspored */
+  --container: 1320px;
+  --gutter: clamp(1rem, 4vw, 2.5rem);
+  --section-y: clamp(4.5rem, 2.6rem + 7vw, 9rem);
+  --header-h: 84px;
+  --header-h-scrolled: 66px;
+
+  /* Zaobljenja */
+  --r-sm: 8px;
+  --r-md: 12px;
+  --r-lg: 16px;
+  --r-pill: 999px;
+
+  /* Senke, tople, nikad sive */
+  --shadow-sm: 0 1px 2px rgba(48, 36, 20, 0.06), 0 6px 16px -6px rgba(48, 36, 20, 0.1);
+  --shadow-md: 0 2px 6px rgba(48, 36, 20, 0.06), 0 22px 44px -18px rgba(48, 36, 20, 0.28);
+  --shadow-lg: 0 30px 70px -28px rgba(20, 26, 19, 0.45);
+
+  /* Pokret */
+  --ease-out: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-fast: 180ms;
+  --dur: 320ms;
+  --dur-slow: 700ms;
+
+  /* Zrno papira (SVG šum, jedva primetan) */
+  --noise: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .32 0 0 0 0 .25 0 0 0 0 .16 0 0 0 .1 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+
+  /* Traka inspirisana zlatiborskim tkanjem */
+  --weave: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='16' viewBox='0 0 32 16'%3E%3Cg fill='none' stroke='%23F6F1E7' stroke-opacity='.28'%3E%3Cpath d='M0 8l8-7 8 7 8-7 8 7M0 8l8 7 8-7 8 7 8-7'/%3E%3Cpath d='M8 5l3 3-3 3-3-3zM24 5l3 3-3 3-3-3z'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+@media (min-width: 64em) {
+  :root {
+    --header-h: 92px;
+    --header-h-scrolled: 70px;
+  }
+}
